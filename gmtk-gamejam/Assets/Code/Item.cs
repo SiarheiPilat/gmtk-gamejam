@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
+public class Item : MonoBehaviour, IPointerDownHandler
 {
     /// <summary>
-    /// The position to where the item comes back if you let go.
+    /// The position to where the item comes back if you let go AKA "home".
     /// </summary>
     private Vector3 sittingPosition;
 
@@ -17,54 +17,20 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     [Range(1, 10)]
     public int Size;
 
-    public enum ItemState
-    {
-        Plugged,
-        Unplugged
-    }
-
-
-    public ItemState itemState;
+    public GameObject[] HostCells;
 
     void Start()
     {
         sittingPosition = transform.position;
-        itemState = ItemState.Unplugged;
-    }
-
-    /// <summary>
-    /// Places the item into the slot.
-    /// </summary>
-    public void PlugItem()
-    {
-        //Manager.HighlightedCellsAmount = 0; //reset cells count
-        OccupyCells(); //mark sells occupied
-        SnapRightIn(); //snap item into slots
-        Manager.Reset();
-    }
-
-    private void SnapRightIn()
-    {
-        
-    }
-
-    //currently broken
-    private void OccupyCells()
-    {
-        for (int i = 0; i < Manager.HighlightedGameobjects.Count - 1; i++)
-        {
-            Manager.HighlightedGameobjects[i].GetComponent<Cell>().cellState = Cell.CellState.Occupied;
-            Manager.HighlightedGameobjects[i].GetComponent<Cell>().SetCellState();
-        }
+        HostCells = new GameObject[Size];
     }
 
     /// <summary>
     /// Returns the item to its sitting position AKA "home".
     /// </summary>
-    public void ReturnItemHome()
+    public void ReturnHome()
     {
         transform.position = sittingPosition;
-        itemState = ItemState.Unplugged;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -72,13 +38,13 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         transform.SetAsLastSibling(); // this keeps the item displayed on top of other items
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    internal void ClearHosts()
     {
-        
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-
+        for (int i = 0; i < HostCells.Length; i++)
+        {
+            if(HostCells[i] != null)
+                HostCells[i].GetComponent<Cell>().ResetCell();
+            HostCells[i] = null;
+        }
     }
 }

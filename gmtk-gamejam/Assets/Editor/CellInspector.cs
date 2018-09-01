@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CustomEditor(typeof(Cell))]
 public class CellInspector : Editor {
@@ -8,19 +9,20 @@ public class CellInspector : Editor {
     // 1 - multi object editing
     // 2 - paint tool
 
+    Cell myTarget;
+
     public override void OnInspectorGUI()
     {
 
-        Cell myTarget = (Cell)target;
+        myTarget = (Cell)target;
 
-        myTarget.SetCellState();
+        myTarget.CellImage = myTarget.gameObject.GetComponent<Image>();
 
-        myTarget.cellState = (Cell.CellState)EditorGUILayout.EnumPopup("Cell state:", myTarget.cellState);
+        myTarget.cellState = (Cell.CellState)EditorGUILayout.EnumPopup("Set state to:", myTarget.cellState);
 
         if (GUI.changed)
         {
-            myTarget.SetCellState();
+            myTarget.SetCellState(myTarget.cellState);
         }
-
     }
 }
