@@ -1,21 +1,69 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+
+/// <summary>
+/// Responsible for highlighting cells. Note that even though it is a 2D-game, triggers have to be detected with 3D colliders.
+/// This script should be sitting on the item.
+/// </summary>
 
 public class CellHighlighter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private Item item;
 
-    void OnTriggerEnter(Collider col)
+    void Start()
     {
-        col.gameObject.GetComponent<Cell>().CellImage.color = Color.green;
+        item = GetComponent<Item>();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (item.itemState == Item.ItemState.Unplugged)
+        {
+            Manager.HighlightedCellsAmount++;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+
+        if (other.gameObject.layer == 10)
+        {
+            Manager.ItemCanBeInstalled = false;
+        }
+
+        if (item.itemState == Item.ItemState.Unplugged)
+        {
+            other.gameObject.GetComponent<Cell>().CellImage.color = Color.green;
+
+            if (!Manager.HighlightedGameobjects.Contains(other.gameObject))
+            {
+                Manager.HighlightedGameobjects.Add(other.gameObject);
+            }
+        }
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        other.gameObject.GetComponent<Cell>().ChangeCellColor();
+        if (other.gameObject.layer == 10)
+        {
+            Manager.ItemCanBeInstalled = true;
+        }
+
+        other.gameObject.GetComponent<Cell>().cellState = Cell.CellState.Empty;
+        other.gameObject.GetComponent<Cell>().SetCellState();
+
+        if (Manager.HighlightedGameobjects.Contains(other.gameObject))
+        {
+            Manager.HighlightedGameobjects.Remove(other.gameObject);
+        }
+
+        if (Manager.HighlightedCellsAmount <= 0)
+        {
+            Manager.HighlightedCellsAmount = 0;
+        }
+        else Manager.HighlightedCellsAmount--;
+
+
     }
 }

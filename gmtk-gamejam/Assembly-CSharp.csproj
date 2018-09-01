@@ -55,7 +55,9 @@
   <ItemGroup>
      <Compile Include="Assets\Code\Cell.cs" />
      <Compile Include="Assets\Code\CellHighlighter.cs" />
+     <Compile Include="Assets\Code\Draggability.cs" />
      <Compile Include="Assets\Code\Item.cs" />
+     <Compile Include="Assets\Code\Manager.cs" />
      <Compile Include="Assets\Code\Utility\DontDestroy.cs" />
      <Compile Include="Assets\Code\Utility\DontDestroyDontDuplicate.cs" />
      <Compile Include="Assets\Code\Utility\Game.cs" />

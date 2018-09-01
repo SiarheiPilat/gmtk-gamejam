@@ -2,22 +2,25 @@
 using UnityEngine;
 
 [CustomEditor(typeof(Cell))]
-[CanEditMultipleObjects]
 public class CellInspector : Editor {
+
+    //TODO:
+    // 1 - multi object editing
+    // 2 - paint tool
 
     public override void OnInspectorGUI()
     {
-        serializedObject.Update();
 
         Cell myTarget = (Cell)target;
+
+        myTarget.SetCellState();
 
         myTarget.cellState = (Cell.CellState)EditorGUILayout.EnumPopup("Cell state:", myTarget.cellState);
 
         if (GUI.changed)
         {
-            myTarget.ChangeCellColor();
+            myTarget.SetCellState();
         }
 
-        serializedObject.ApplyModifiedProperties();
     }
 }
