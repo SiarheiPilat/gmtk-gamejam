@@ -25,7 +25,7 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        
+        transform.SetAsLastSibling(); // keeps item on top of others
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -37,6 +37,7 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
 
     }
+   
 	
 	// Update is called once per frame
 	void Update () {

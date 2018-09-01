@@ -16,6 +16,15 @@ public class Cell : MonoBehaviour {
 
     private Color emptyCellColor = Color.white, occupiedCellColor = Color.cyan, closedCellColor = Color.grey;
 
+    public Image CellImage;
+    public Color CellColor;
+    
+    void Start()
+    {
+        CellImage = GetComponent<Image>();
+        CellColor = CellImage.color;
+    }
+
     public void ChangeCellColor()
     {
         switch (cellState)
@@ -30,9 +39,5 @@ public class Cell : MonoBehaviour {
                 GetComponent<Image>().color = closedCellColor;
                 break;
         }
-    }
-
-	void Update () {
-
     }
 }
