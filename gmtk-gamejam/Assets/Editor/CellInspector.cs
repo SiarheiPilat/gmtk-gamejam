@@ -14,18 +14,17 @@ public class CellInspector : Editor {
     public override void OnInspectorGUI()
     {
 
-        //CELL REMOVED
-        //myTarget = (Cell)target;
+        myTarget = (Cell)target;
 
-        //myTarget.CellImage = myTarget.gameObject.GetComponent<Image>();
+        myTarget.CellImage = myTarget.gameObject.GetComponent<Image>();
 
-        //myTarget.cellState = (Cell.CellState)EditorGUILayout.EnumPopup("Set state to:", myTarget.cellState);
+        myTarget.cellState = (Cell.CellState)EditorGUILayout.EnumPopup("Set state to:", myTarget.cellState);
 
-        //if (GUI.changed)
-        //{
-        //    myTarget.SetCellState(myTarget.cellState);
-        //}
+        if (GUI.changed)
+        {
+            myTarget.SetCellState(myTarget.cellState);
+        }
 
-        DrawDefaultInspector();
+        //DrawDefaultInspector();
     }
 }

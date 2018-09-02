@@ -5,25 +5,30 @@ public class Manager : MonoBehaviour {
 
     public static List<GameObject> TriggeredCells; // cells that we hover over with an item
 
-    //REMOVED
-    //public static bool CanInstall;
+    public static bool CanInstall;
     public static Item SelectedItem;
 
+    [Header("---Debugging only---")]
+
+    public GameObject selectedItem;
+    public int NumberOfCells;
+
 	void Start () {
-        //CanInstall = false; // the item can not be installed from the start
+        CanInstall = true; // the item can be installed from the start
         TriggeredCells = new List<GameObject>();
     }
 	
 	void Update () {
 
-        //Debug.Log("Highlited cells: " + HighlightedCellsAmount + " | Array length: " + HighlightedGameobjects.Count + " | Can install: " + ItemCanBeInstalled);
-        //Debug.Log(CanInstall);
+        if(SelectedItem)
+            selectedItem = SelectedItem.gameObject;
+        NumberOfCells = TriggeredCells.Count;
     }
 
     public static void Reset()
     {
         TriggeredCells.Clear();
-        //CanInstall = false;
+        CanInstall = false;
         SelectedItem = null;
     }
 }

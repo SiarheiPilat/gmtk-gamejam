@@ -53,14 +53,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\Cell.cs" />
-     <Compile Include="Assets\Code\CellHighlighter.cs" />
-     <Compile Include="Assets\Code\Draggability.cs" />
      <Compile Include="Assets\Code\enemyAI.cs" />
      <Compile Include="Assets\Code\health.cs" />
-     <Compile Include="Assets\Code\Item.cs" />
      <Compile Include="Assets\Code\Manager.cs" />
      <Compile Include="Assets\Code\Module.cs" />
+     <Compile Include="Assets\Code\PanelManagement\Cell.cs" />
+     <Compile Include="Assets\Code\PanelManagement\CellHighlighter.cs" />
+     <Compile Include="Assets\Code\PanelManagement\Draggability.cs" />
+     <Compile Include="Assets\Code\PanelManagement\Item.cs" />
      <Compile Include="Assets\Code\peacefulAI.cs" />
      <Compile Include="Assets\Code\projectileAI.cs" />
      <Compile Include="Assets\Code\Radar.cs" />
@@ -69,21 +69,6 @@
      <Compile Include="Assets\Code\ShipStats.cs" />
      <Compile Include="Assets\Code\Spawner.cs" />
      <Compile Include="Assets\Code\StatsUpdator.cs" />
-     <Compile Include="Assets\Code\test.cs" />
-     <Compile Include="Assets\Code\TriggerHandler.cs" />
-     <Compile Include="Assets\Code\Utility\DontDestroy.cs" />
-     <Compile Include="Assets\Code\Utility\DontDestroyDontDuplicate.cs" />
-     <Compile Include="Assets\Code\Utility\Game.cs" />
-     <Compile Include="Assets\Code\Utility\LevelLoader.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\ColorValue.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\FloatValue.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\GameEvent.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\GameEventListener.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\GameObjectSetter.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\GameObjectValue.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\IntValue.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\ScriptableOverseer.cs" />
-     <Compile Include="Assets\Code\Utility\ScriptableObjectsHandling\TransformValue.cs" />
      <Compile Include="Assets\Code\Utils.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>F:/gmtk-gamejam/gmtk-gamejam/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
