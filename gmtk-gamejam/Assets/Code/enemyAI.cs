@@ -34,6 +34,7 @@ public class enemyAI : MonoBehaviour {
         } else
         {
             AttackBehaviour();
+            transform.position += Vector3.down * 0.01f;
         }
 	}
 

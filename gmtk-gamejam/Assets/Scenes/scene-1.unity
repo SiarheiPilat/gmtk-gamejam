@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellState: 0
-  CellImage: {fileID: 0}
+  CellImage: {fileID: 79033522}
 --- !u!65 &79033525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8321,6 +8321,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1932400337}
   - component: {fileID: 1932400336}
+  - component: {fileID: 1932400338}
+  - component: {fileID: 1932400339}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -8363,7 +8365,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a470f4e8a562fc64a888614a4944bec7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0aadcb399199d1f478a7c139956a498d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8381,12 +8383,35 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1932400335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 28.3}
-  m_LocalScale: {x: 12.544858, y: 12.544858, z: 12.544858}
+  m_LocalPosition: {x: -31.8, y: 1, z: 28.3}
+  m_LocalScale: {x: 7.611325, y: 7.611325, z: 7.611325}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932400338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1932400335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e0140dd6f7f49439661974e074eb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1932400339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1932400335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f61b176d9d1d14683c9110fbfd6311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScrollSpeed: -0.92
 --- !u!1 &1940776338
 GameObject:
   m_ObjectHideFlags: 0

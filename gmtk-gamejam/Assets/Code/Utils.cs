@@ -23,7 +23,7 @@ public class Utils : MonoBehaviour {
     {
         float minValue = 0.0f;
         if (gos.Length == 1)
-            return gos[0].GetComponent<RectTransform>().anchoredPosition.x;
+            return gos[0].GetComponent<RectTransform>().anchoredPosition.x; //NullRef here sometimes
         if (gos.Length > 1)
         {
             minValue = gos[0].GetComponent<RectTransform>().anchoredPosition.x;
