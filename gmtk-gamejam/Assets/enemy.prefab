@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4446860652979200}
   - component: {fileID: 212119216657889432}
   - component: {fileID: 114926617684508344}
-  - component: {fileID: 61365786943835138}
   - component: {fileID: 50641063965532148}
   - component: {fileID: 114230392576177888}
+  - component: {fileID: 58862712779908666}
   m_Layer: 0
   m_Name: enemy
   m_TagString: enemy
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713148851593730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.954166, y: 19.869907, z: 0}
+  m_LocalPosition: {x: -11.482778, y: 1.040219, z: 0}
   m_LocalScale: {x: 0.32886747, y: 0.32886747, z: 0.32886747}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61365786943835138
-BoxCollider2D:
+--- !u!58 &58862712779908666
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,18 +77,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.23, y: 4.84}
-    newSize: {x: 5.23, y: 4.84}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.23, y: 4.84}
-  m_EdgeRadius: 0
+  m_Radius: 2.615
 --- !u!114 &114230392576177888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf512bbf6c6a2b479cbb9f949c1b499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldType: 0
   Health: 100
 --- !u!114 &114926617684508344
 MonoBehaviour:
@@ -117,7 +108,7 @@ MonoBehaviour:
   speed: 1.22
   projectile: {fileID: 1359389944793910, guid: 30c03b76254baab478a6379bc75594e0, type: 2}
   attackFrequency: 2
-  damage: 5
+  damage: 2
 --- !u!212 &212119216657889432
 SpriteRenderer:
   m_ObjectHideFlags: 1

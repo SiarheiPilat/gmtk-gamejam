@@ -21,13 +21,16 @@ public class projectileAI : MonoBehaviour {
         }
         else
         {
-            DamageShip(damage);
+            DamageEnemyShip(damage);
             Destroy(gameObject);
         }
     }
 
-    private void DamageShip(float dmg)
+    private void DamageEnemyShip(float dmg)
     {
+        //calculate final damage
+
+
         if(ShipStats.ShipShield == 0)
         {
             ShipStats.ShipHealth -= dmg;

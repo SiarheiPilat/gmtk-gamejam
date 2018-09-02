@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class health : MonoBehaviour {
 
+    public enum ShieldType
+    {
+        Normal,
+        Fire,
+        Ice,
+        Plasma
+    }
+
+    public ShieldType shieldType;
+
     public int Health;
 
 	// Use this for initialization

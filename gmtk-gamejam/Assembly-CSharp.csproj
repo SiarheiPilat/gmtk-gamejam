@@ -60,8 +60,10 @@
      <Compile Include="Assets\Code\health.cs" />
      <Compile Include="Assets\Code\Item.cs" />
      <Compile Include="Assets\Code\Manager.cs" />
+     <Compile Include="Assets\Code\Module.cs" />
      <Compile Include="Assets\Code\peacefulAI.cs" />
      <Compile Include="Assets\Code\projectileAI.cs" />
+     <Compile Include="Assets\Code\Radar.cs" />
      <Compile Include="Assets\Code\shipAI.cs" />
      <Compile Include="Assets\Code\shipProjectileAI.cs" />
      <Compile Include="Assets\Code\ShipStats.cs" />
