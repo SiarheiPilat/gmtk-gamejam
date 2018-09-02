@@ -12,11 +12,16 @@ public class shipAI : MonoBehaviour {
     private float counter;
 
     public float FireFrequency;
+
+    public AudioClip laser;
+
+    private AudioSource audioSource;
     
 	// Use this for initialization
 	void Start () {
-		
-	}
+        audioSource = GetComponent<AudioSource>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -46,6 +51,7 @@ public class shipAI : MonoBehaviour {
 
     void FireProjectile()
     {
+        audioSource.PlayOneShot(laser);
         GameObject projectileClone = Instantiate(shipProjectile, transform.position, Quaternion.identity);
         projectileClone.GetComponent<shipProjectileAI>().SetTarget(target);
         target.GetComponent<health>().Damage((int)ShipStats.hitDamage);

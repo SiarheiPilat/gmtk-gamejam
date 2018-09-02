@@ -13,11 +13,11 @@ public class InfiniteScroll : MonoBehaviour {
 	}
 
     //1
-    //217.98
+    //306.92
 
     void AddTile()
     {
-        GameObject tile = Instantiate(gameObject, transform.position + new Vector3(0.0f, 254.75f, 0.0f), Quaternion.identity);
+        GameObject tile = Instantiate(gameObject, transform.position + new Vector3(0.0f, 304.92f, 0.0f), Quaternion.identity);
         Destroy(this);
     }
 }

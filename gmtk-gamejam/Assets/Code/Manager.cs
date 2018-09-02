@@ -16,7 +16,10 @@ public class Manager : MonoBehaviour {
     public GameObject shiledText;
     public static GameObject ShieldText;
 
+    public static GameObject ship;
+
 	void Start () {
+        ship = GameObject.Find("actual-ship");
         ShieldText = shiledText;
         CanInstall = true; // the item can be installed from the start
         TriggeredCells = new List<GameObject>();

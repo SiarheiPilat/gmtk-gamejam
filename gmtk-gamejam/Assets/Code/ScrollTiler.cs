@@ -18,7 +18,7 @@ public class ScrollTiler : MonoBehaviour {
 	void Update () {
         transform.position -= Vector3.down * ScrollSpeed;
 
-        if (transform.position.y < -160.0f)
+        if (transform.position.y < -250.0f)
         {
             Destroy(gameObject);
         }

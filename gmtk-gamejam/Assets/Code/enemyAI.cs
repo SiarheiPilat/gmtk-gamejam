@@ -15,6 +15,8 @@ public class enemyAI : MonoBehaviour {
 
     public float attackFrequency;
 
+    public AudioClip laserShot;
+
     public int damage;
 
 	void Start () {
@@ -34,7 +36,16 @@ public class enemyAI : MonoBehaviour {
         } else
         {
             AttackBehaviour();
-            transform.position += Vector3.down * 0.01f;
+            
+            if(transform.position.y > Manager.ship.transform.position.y)
+            {
+                transform.position += Vector3.down * 0.01f;
+            } else
+            {
+                //i know, i know
+                transform.position += Vector3.down * 0.01f;
+                transform.localScale = new Vector3(0.3288675f, -0.3288675f, 0.3288675f);
+            }
         }
 	}
 
@@ -50,6 +61,7 @@ public class enemyAI : MonoBehaviour {
 
     private void Attack()
     {
+        AudioSource.PlayClipAtPoint(laserShot, Camera.main.transform.position);
         GameObject ProjectileClone = Instantiate(projectile, transform.position, Quaternion.identity);
         ProjectileClone.GetComponent<projectileAI>().damage = damage;
     }
