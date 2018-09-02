@@ -13,14 +13,19 @@ public class Manager : MonoBehaviour {
     public GameObject selectedItem;
     public int NumberOfCells;
 
+    public GameObject shiledText;
+    public static GameObject ShieldText;
+
 	void Start () {
+        ShieldText = shiledText;
         CanInstall = true; // the item can be installed from the start
         TriggeredCells = new List<GameObject>();
     }
 	
 	void Update () {
 
-        if(SelectedItem)
+        //Debugging
+        if (SelectedItem)
             selectedItem = SelectedItem.gameObject;
         NumberOfCells = TriggeredCells.Count;
     }

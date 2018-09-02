@@ -56,7 +56,12 @@
      <Compile Include="Assets\Code\enemyAI.cs" />
      <Compile Include="Assets\Code\health.cs" />
      <Compile Include="Assets\Code\Manager.cs" />
-     <Compile Include="Assets\Code\Module.cs" />
+     <Compile Include="Assets\Code\Modules\EmptyModule.cs" />
+     <Compile Include="Assets\Code\Modules\Module.cs" />
+     <Compile Include="Assets\Code\Modules\RadarModule.cs" />
+     <Compile Include="Assets\Code\Modules\ShieldRegenerator.cs" />
+     <Compile Include="Assets\Code\Modules\ShieldRegenModule.cs" />
+     <Compile Include="Assets\Code\Modules\SuperSightModule.cs" />
      <Compile Include="Assets\Code\PanelManagement\Cell.cs" />
      <Compile Include="Assets\Code\PanelManagement\CellHighlighter.cs" />
      <Compile Include="Assets\Code\PanelManagement\Draggability.cs" />
@@ -64,6 +69,7 @@
      <Compile Include="Assets\Code\peacefulAI.cs" />
      <Compile Include="Assets\Code\projectileAI.cs" />
      <Compile Include="Assets\Code\Radar.cs" />
+     <Compile Include="Assets\Code\ShieldTextLabel.cs" />
      <Compile Include="Assets\Code\shipAI.cs" />
      <Compile Include="Assets\Code\shipProjectileAI.cs" />
      <Compile Include="Assets\Code\ShipStats.cs" />

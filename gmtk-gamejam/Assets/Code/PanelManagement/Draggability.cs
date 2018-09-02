@@ -11,6 +11,8 @@ public class Draggability : MonoBehaviour, IDragHandler, IEndDragHandler,
         Manager.SelectedItem = gameObject.GetComponent<Item>();
         Manager.SelectedItem.gameObject.AddComponent<CellHighlighter>();
         ResetHostCells();
+        //Debug.Log(Manager.SelectedItem.gameObject.GetComponent<Module>());
+        Manager.SelectedItem.gameObject.GetComponent<Module>().RemoveEffect();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -25,8 +27,8 @@ public class Draggability : MonoBehaviour, IDragHandler, IEndDragHandler,
         // if manager allows installation, install it right away
         if (Manager.CanInstall == true)
         {
+            Manager.SelectedItem.gameObject.GetComponent<Module>().ApplyEffect();
             SnapRightIn();
-
         }
         // if not, return it home
         else
