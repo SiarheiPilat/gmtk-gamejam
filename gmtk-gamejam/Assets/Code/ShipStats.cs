@@ -13,30 +13,41 @@ public class ShipStats : MonoBehaviour {
     public static int INT; // Ship's Energy and Life Amount
     public static int WIS; // Line of Sight [In Degrees or in Radius (depending on the Sight Component)]
 
-    private float hitDamage;
-    private float awarnessOfDanger;
-    private float speed;
-    private float acceleration;
-    private float armor;
-    private float energy;
-    private float life;
-    private float lineOfSight;
+    public static float hitDamage = 10;
+    public static float awarnessOfDanger;
+    public static float speed;
+    public static float acceleration;
+    public static float armor;
+    public static float energy;
+    public static float life;
+    public static float lineOfSight;
 
-    public float ShipHealth, ShipShield;
+    public static float ShipHealth, ShipShield;
 
     int temp = 0, coin = 0;
 
     public GameObject manager;
 
+    public static GameObject staticManager;
+
     // Use this for initialization
     void Start () {
+        staticManager = manager;
         RandomizeStats();
 
         SecondStatsCheck();
 
+        ShipHealth = 100;
+        ShipShield = 100;
+
         manager.GetComponent<StatsUpdator>().UpdateStats(STR, DEX, CON, INT, WIS);
         manager.GetComponent<StatsUpdator>().UpdateHealthAndShield(ShipHealth, ShipShield);
 
+    }
+
+    public static void UpdateHUD()
+    {
+        staticManager.GetComponent<StatsUpdator>().UpdateHealthAndShield(ShipHealth, ShipShield);
     }
 
     private void SecondStatsCheck()
@@ -85,6 +96,25 @@ public class ShipStats : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+		if(ShipHealth <= 0)
+        {
+            Die();
+        }
 	}
+
+    void Die()
+    {
+        SendEnemiesHome();
+        Destroy(gameObject, 0.1f);
+    }
+
+    void SendEnemiesHome()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+        foreach (var enemy in enemies)
+        {
+            Destroy(enemy.GetComponent<enemyAI>());
+            enemy.AddComponent<peacefulAI>();
+        }
+    }
 }
