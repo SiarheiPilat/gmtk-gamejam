@@ -4,11 +4,13 @@ using UnityEngine;
 public class Manager : MonoBehaviour {
 
     public static List<GameObject> TriggeredCells; // cells that we hover over with an item
-    public static bool CanInstall;
+
+    //REMOVED
+    //public static bool CanInstall;
     public static Item SelectedItem;
 
 	void Start () {
-        CanInstall = false; // the item can not be installed from the start
+        //CanInstall = false; // the item can not be installed from the start
         TriggeredCells = new List<GameObject>();
     }
 	
@@ -21,7 +23,7 @@ public class Manager : MonoBehaviour {
     public static void Reset()
     {
         TriggeredCells.Clear();
-        CanInstall = false;
+        //CanInstall = false;
         SelectedItem = null;
     }
 }

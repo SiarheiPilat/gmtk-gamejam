@@ -100,6 +100,7 @@ public class Utils : MonoBehaviour {
         return new Vector2((x1 + x2) / 2.0f, (y1 + y2) / 2.0f);
     }
     
+    // BUG: NullReferenceException is fired up around line 32 sometimes
     public static Vector2 MidPoint(GameObject[] gos)
     {
         return MidPoint(MinX(gos), MaxX(gos), MinY(gos), MaxY(gos));

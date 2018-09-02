@@ -10,19 +10,23 @@ public class Item : MonoBehaviour, IPointerDownHandler
     /// </summary>
     private Vector3 sittingPosition;
 
-    /// <summary>
-    /// How many cells one item occupies. This should be set manually.
-    /// </summary>
-    [Tooltip("How many cells one item occupies. This should be set manually.")]
-    [Range(1, 10)]
-    public int Size;
+    public bool CanInstall;
 
-    public GameObject[] HostCells;
+    //SNAPPING REMOVED
+    ///// <summary>
+    ///// How many cells one item occupies. This should be set manually.
+    ///// </summary>
+    //[Tooltip("How many cells one item occupies. This should be set manually.")]
+    //[Range(1, 10)]
+    //public int Size;
+    //public GameObject[] HostCells;
 
     void Start()
     {
         sittingPosition = transform.position;
-        HostCells = new GameObject[Size];
+        CanInstall = false;
+        //SNAPPING REMOVED
+        //HostCells = new GameObject[Size];
     }
 
     /// <summary>
@@ -38,13 +42,14 @@ public class Item : MonoBehaviour, IPointerDownHandler
         transform.SetAsLastSibling(); // this keeps the item displayed on top of other items
     }
 
-    internal void ClearHosts()
-    {
-        for (int i = 0; i < HostCells.Length; i++)
-        {
-            if(HostCells[i] != null)
-                HostCells[i].GetComponent<Cell>().ResetCell();
-            HostCells[i] = null;
-        }
-    }
+    //SNAPPING REMOVED
+    //internal void ClearHosts()
+    //{
+    //    for (int i = 0; i < HostCells.Length; i++)
+    //    {
+    //        if(HostCells[i] != null)
+    //            HostCells[i].GetComponent<Cell>().ResetCell();
+    //        HostCells[i] = null;
+    //    }
+    //}
 }
